@@ -47,7 +47,7 @@ const longest = (s1, s2) => [...new Set(s1+s2)].sort().join('')
 ### What I learnt
 [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) is are collections of values. A value in the set may only occur once. **This replaces most of my code instantly, Leftover is just sort().join().**
 ___
-## Sort and join unique values
+## Consecutive strings
 Source > [Codewar Challenge](https://www.codewars.com/kata/56a5d994ac971f1ac500003e)
 ### How dumb of me
 ```javascript
@@ -109,4 +109,26 @@ const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
 
 console.log(animals.slice(2, 4));
 // Expected output: Array ["camel", "duck"] (camel is at index 2, start slice here (include camel), duck is not in index 4 => result = index 2,3 only (exclude elephant))
+```
+
+## String ends with
+Source > [Codewar Challenge](https://www.codewars.com/kata/51f2d1cafc9c0f745c00037d)
+### How dumb of me
+```javascript
+const solution = (str, ending) => str.slice((str.length - ending.length), str.length) == ending ? true : false
+```
+### How some guy solve it
+```javascript
+const solution = (str, ending) => str.endsWith(ending);
+```
+
+### What I learnt
+**endsWith()**
+The endsWith() method of String values determines whether a string ends with the characters of this string, returning true or false as appropriate. the second param is for the specific last index to check (if no, check from the very last of the string).
+```javascript
+const str = "To be, or not to be, that is the question.";
+
+console.log(str.endsWith("question.")); // true
+console.log(str.endsWith("to be")); // false
+console.log(str.endsWith("to be", 19)); // true
 ```
